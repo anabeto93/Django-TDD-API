@@ -9,7 +9,7 @@ from rest_framework import status
 CREATE_USER_URL = reverse('user:create')
 
 
-def create_user(**params):
+def create_user(params):
     return get_user_model().objects.create_user(**params)
 
 
@@ -20,7 +20,7 @@ class PublicUserApiTest(TestCase):
         self.client = APIClient()
 
     def test_create_valid_user_successful(self):
-        '''Test that creating a valid user with the given payload is successful.'''
+        '''Test that creating a valid user is successful.'''
 
         payload = {
             'email': 'test@admin.com',
@@ -57,7 +57,7 @@ class PublicUserApiTest(TestCase):
         self.assertEqual(res.status_code, status.HTTP_400_BAD_REQUEST)
         # also check to ensure the user is not created
         user_exists = get_user_model().objects.filter(
-            email = payload['email']
+            email=payload['email']
         ).exists()
 
         self.assertFalse(user_exists)
