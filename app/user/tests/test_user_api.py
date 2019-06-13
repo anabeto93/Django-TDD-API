@@ -77,7 +77,7 @@ class PublicUserApiTest(TestCase):
         '''Test that token will not be created given invalid credentials.'''
         payload = {'email': 'you@admin.com', 'password': 'correctone'}
         create_user(**payload)
-        payload['password'] = 'wrong_password' # change the password
+        payload['password'] = 'wrong_password'  # change the password
 
         res = self.client.post(TOKEN_URL, payload)
 
