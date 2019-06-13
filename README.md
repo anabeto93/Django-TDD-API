@@ -20,4 +20,4 @@ docker-compose up
 ```
 
 ## Special Notes
-I added `192.168.99.100` since I'm using docker to run this on my local machine
+I added `192.168.99.100` to the list of `ALLOWED_HOSTS` in the `app/settings.py` file since I'm using docker to run this on my local machine
