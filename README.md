@@ -19,6 +19,15 @@ Once that is done, just remeber you don't have to run the same commands any long
 docker-compose up
 ```
 
+## Running Tests
+You can run the tests which have been written for each individual app with the followin command
+
+```bash
+docker-compose run --rm app sh -c "python manage.py test && flake8"
+```
+
+The Flake8 is to check for linting, since I am going with `PEP 8`
+
 ## Special Notes
 I added `192.168.99.100` to the list of `ALLOWED_HOSTS` in the `app/settings.py` file since I'm using docker to run this on my local machine
 
