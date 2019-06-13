@@ -38,3 +38,5 @@ I added `192.168.99.100` to the list of `ALLOWED_HOSTS` in the `app/settings.py`
 `/api/user/token` is used to create a token based on an existing user account.
 
 `/api/user/me` but you will need the ModHeader extension to add `Authorization: Token some_token_here` before you can visit this in your browser. The `some_token_here` is obtained when you have visited the `/api/user/token` endpoint.
+
+[![Build Status](https://travis-ci.org/anabeto93/Django-TDD-API.svg?branch=master)](https://travis-ci.org/anabeto93/Django-TDD-API)
